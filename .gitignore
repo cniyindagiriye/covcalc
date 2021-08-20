@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+cypress/videos/
+cypress/screenshots/
+/cypress
+# testing
+/coverage
+# the lock files
+package-lock.json
+# production
+/build
+.env
+debug.log
+.vscode
+.DS_Store
