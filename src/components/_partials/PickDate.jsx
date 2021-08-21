@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useApp } from '../../contexts/AppContext';
 
 const PickDate = () => {
   const today = new Date();
   const started = new Date(2019, 11, 31); // when covid-19 started
-  const [date, setDate] = useState(today);
+  const { date, setDate } = useApp();
   const handleClick = date => {
     return date <= today && date >= started ? setDate(date) : today;
   };
