@@ -18,7 +18,7 @@ const MainContainer = () => {
           src={profile}
           alt="profile"
         />
-        <div className="flex flex-col items-center w-1/2">
+        <div className="flex flex-col items-center w-1/2 pl-4">
           <div className="flex flex-col items-start">
             <h1 className="text-xl font-medium md:text-xl lg:text-2xl">
               Celestin Niyindagiriye

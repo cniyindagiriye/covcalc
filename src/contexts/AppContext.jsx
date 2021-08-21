@@ -20,6 +20,7 @@ const AppProvider = ({ children }) => {
   );
   const [countriesData, setCountriesData] = useState([]);
   const [currentCountry, setCurrentCountry] = useState(null);
+  const [continents, setContinents] = useState([]);
 
   const month = date.getMonth() + 1;
   const day = date.getDate();
@@ -66,6 +67,18 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const getContinentsData = async () => {
+    const ENDPOINT = 'continents';
+    const response = await axios.get(API_URL + ENDPOINT);
+
+    if (response) {
+      const { data } = response;
+      if (data) {
+        setContinents(data);
+      }
+    }
+  };
+
   useEffect(() => {
     if (date) {
       const filteredData = timeline.filter(
@@ -80,6 +93,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        continents,
         loadingCountries,
         countriesData,
         currentCountry,
@@ -91,6 +105,7 @@ const AppProvider = ({ children }) => {
         getCountriesData,
         getCountryVaccinateData,
         onChangeCountry,
+        getContinentsData,
       }}
     >
       {children}
