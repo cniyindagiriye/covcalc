@@ -3,7 +3,10 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="flex flex-col items-center justify-between bg-[#1E776E] mt-auto">
-      <div className="flex flex-col space-y-4 items-center py-4 md:py-12 px-4 md:px-12 xl:px-24">
+      <div
+        id="contact"
+        className="flex flex-col space-y-4 items-center py-4 md:py-12 px-4 md:px-12 xl:px-24"
+      >
         <h3 className="uppercase font-bold text-lg md:text-2xl text-white">
           Reach me
         </h3>
